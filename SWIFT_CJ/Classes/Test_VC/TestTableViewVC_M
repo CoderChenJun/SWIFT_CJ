@@ -1,0 +1,93 @@
+//
+//  TestTableViewVC.swift
+//  TestTabBarController
+//
+//  Created by CoderChenJun on 2018/4/23.
+//  Copyright © 2018年 奥奈斯特（宁波）软件技术有限公司. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+var tableView: CJBaseTableView?
+
+
+
+override func viewDidLoad() {
+super.viewDidLoad()
+
+
+tableView = CJBaseTableView.init(frame: CGRect.init(x: 0.0,
+y: HEIGHT_STATUSBAR + HEIGHT_NAVBAR,
+width: self.view.width,
+height: UISCREEN_HEIGHT - HEIGHT_STATUSBAR - HEIGHT_NAVBAR - HEIGHT_TABBAR),
+tableViewStyle: .plain,
+tableCellClass: UITableViewCell.self,
+forCellReuseIdentifier: "cell",
+target: self) {
+self.refresh()
+}
+tableView?.delegate   = self
+tableView?.dataSource = self
+
+tableView?.backgroundColor = UIColor.white
+
+self.view.addSubview(tableView!)
+
+tableView?.mj_header.beginRefreshing()
+}
+
+
+
+
+
+
+@objc func refresh() {
+
+let time: TimeInterval = 1.0
+DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+//code
+print("1 秒后输出")
+
+self.tableView?.endRefresh()
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+var temp = Int(arc4random_uniform(100))+1
+//temp = 0
+return temp
+}
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+cell.textLabel?.text = "indexPath\(indexPath.row)"
+return cell
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
