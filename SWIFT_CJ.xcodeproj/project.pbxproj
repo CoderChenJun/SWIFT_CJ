@@ -15,6 +15,7 @@
 		8F7D0002209987B100DE4112 /* UIApplication+CJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D0001209987B100DE4112 /* UIApplication+CJ.swift */; };
 		8F7D0005209AD92500DE4112 /* CJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D0004209AD92500DE4112 /* CJWebViewController.swift */; };
 		8F7D0007209AD95200DE4112 /* CJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D0006209AD95200DE4112 /* CJBaseViewController.swift */; };
+		8F7EF2B820B3BFF60031693E /* CJMathToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7EF2B720B3BFF60031693E /* CJMathToolkit.swift */; };
 		8F9B04D720919FFA00A48721 /* CJTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B049A20919FFA00A48721 /* CJTabBarButton.swift */; };
 		8F9B04D820919FFA00A48721 /* CJNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B049B20919FFA00A48721 /* CJNavigationController.swift */; };
 		8F9B04D920919FFA00A48721 /* CJTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B049C20919FFA00A48721 /* CJTabBarController.swift */; };
@@ -81,6 +82,7 @@
 		8F7D0004209AD92500DE4112 /* CJWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJWebViewController.swift; sourceTree = "<group>"; };
 		8F7D0006209AD95200DE4112 /* CJBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJBaseViewController.swift; sourceTree = "<group>"; };
 		8F7DFFFF20995AB700DE4112 /* CJAuthorityToolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJAuthorityToolkit.swift; sourceTree = "<group>"; };
+		8F7EF2B720B3BFF60031693E /* CJMathToolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJMathToolkit.swift; sourceTree = "<group>"; };
 		8F9B0347208DD5CC00A48721 /* ObjectiveCHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveCHeader.h; sourceTree = "<group>"; };
 		8F9B049A20919FFA00A48721 /* CJTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJTabBarButton.swift; sourceTree = "<group>"; };
 		8F9B049B20919FFA00A48721 /* CJNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJNavigationController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				8F9B04B920919FFA00A48721 /* CJStringToolkit.swift */,
 				8F7DFFFF20995AB700DE4112 /* CJAuthorityToolkit.swift */,
 				8F9B04BC20919FFA00A48721 /* CJValidateToolkit.swift */,
+				8F7EF2B720B3BFF60031693E /* CJMathToolkit.swift */,
 			);
 			path = Toolkit;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				8FBE156620A2915800CFC450 /* CJConstToolkit.swift in Sources */,
 				8F7D0005209AD92500DE4112 /* CJWebViewController.swift in Sources */,
 				8F9B04F220919FFA00A48721 /* CJSystemToolkit.swift in Sources */,
+				8F7EF2B820B3BFF60031693E /* CJMathToolkit.swift in Sources */,
 				8F9B04F520919FFA00A48721 /* CJPagingCollectionCell.swift in Sources */,
 				8F9B04F420919FFA00A48721 /* CJPagingCollectionModel.swift in Sources */,
 				8F9B050220919FFA00A48721 /* TestCollectionViewVC.swift in Sources */,

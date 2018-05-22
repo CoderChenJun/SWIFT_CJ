@@ -14,7 +14,7 @@ class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     private lazy var tableView: CJBaseTableView = {
         let tableView = CJBaseTableView.init(frame: CGRect.init(x: 0.0,
-                                                                y: HEIGHT_STATUSBAR + HEIGHT_NAVBAR,
+                                                                y: 0.0,
                                                                 width: self.view.width,
                                                                 height: UISCREEN_HEIGHT - HEIGHT_STATUSBAR - HEIGHT_NAVBAR - HEIGHT_TABBAR),
                                              tableViewStyle: .plain,

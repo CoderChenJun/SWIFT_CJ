@@ -16,9 +16,9 @@ class TestCollectionViewVC: UIViewController, CJPagingCollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pagingCollectionView = CJPagingCollectionView(frame: CGRect(x: 0,
-                                                                        y: HEIGHT_STATUSBAR + HEIGHT_NAVBAR,
-                                                                        width: self.view.width,
+        let pagingCollectionView = CJPagingCollectionView(frame: CGRect(x     : 0,
+                                                                        y     : HEIGHT_STATUSBAR + HEIGHT_NAVBAR,
+                                                                        width : self.view.width,
                                                                         height: CGFloat(CJPagingCollectionViewH)))
         pagingCollectionView.delegate = self
         self.view.addSubview(pagingCollectionView)
