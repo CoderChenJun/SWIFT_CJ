@@ -16,10 +16,12 @@ class TestSettingViewController: CJBaseSettingViewController {
      *  创建第0组数据
      */
     func setupGroup0() {
-        let help = CJSettingArrowItem.init(icon: "cj_bangqiu_44x44_", title: "帮助", destVcClass: ViewController.self)
-        let share = CJSettingArrowItem.init(icon: "cj_baolingqiu_44x44_", title: "分享", destVcClass: nil)
-        let soap = CJSettingArrowItem.init(icon: "cj_chuidiao_44x44_", title: "SOAP", destVcClass: SOAPViewController.self)
-        let http = CJSettingArrowItem.init(icon: "cj_chuidiao_44x44_", title: "HTTP", destVcClass: HTTPViewController.self)
+        let help  = CJSettingArrowItem.init(icon: "cj_bangqiu_44x44_", title: "MBProgressHUD", destVcClass: ViewController.self)
+        let share = CJSettingArrowItem.init(icon: "cj_baolingqiu_44x44_", title: "WebView", destVcClass: nil)
+        let soap  = CJSettingArrowItem.init(icon: "cj_chuidiao_44x44_", title: "SOAP请求", destVcClass: SOAPViewController.self)
+        let http  = CJSettingArrowItem.init(icon: "cj_chuidiao_44x44_", title: "HTTP请求", destVcClass: HTTPViewController.self)
+        let auth  = CJSettingArrowItem.init(icon: "cj_chuidiao_44x44_", title: "Authentication", destVcClass: TestAuthenticationViewController.self)
+        
         
         
         share.option = {
@@ -31,7 +33,7 @@ class TestSettingViewController: CJBaseSettingViewController {
         
         
         let group = CJSettingGroup()
-        group.items = [help, share, soap, http]
+        group.items = [help, share, soap, http, auth]
         self.data?.add(group)
         
     }

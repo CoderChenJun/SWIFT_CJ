@@ -17,8 +17,8 @@ extension UIAlertController {
                                         preferredStyle: UIAlertControllerStyle,
                                         cancelButtonTitle: String?,
                                         defaultButtonTitle: String?,
-                                        cancelBlock: ((_ action: UIAlertAction?) -> Void)? = nil,
-                                        defaultBlock: ((_ action: UIAlertAction?) -> Void)? = nil) {
+                                        cancelBlock: ((UIAlertAction) -> Swift.Void)? = nil,
+                                        defaultBlock: ((UIAlertAction) -> Swift.Void)? = nil) {
 
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
@@ -49,7 +49,7 @@ extension UIAlertController {
                                         message: String?,
                                         preferredStyle: UIAlertControllerStyle,
                                         cancelButtonTitle: String?,
-                                        cancelBlock: ((_ action: UIAlertAction?) -> Void)? = nil) {
+                                        cancelBlock: ((UIAlertAction) -> Swift.Void)? = nil) {
 
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
