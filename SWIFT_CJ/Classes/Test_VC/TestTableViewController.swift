@@ -1,6 +1,6 @@
 //
-//  TestTableViewVC.swift
-//  TestTabBarController
+//  TestTableViewController.swift
+//  SWIFT_CJ
 //
 //  Created by CoderChenJun on 2018/4/23.
 //  Copyright © 2018年 奥奈斯特（宁波）软件技术有限公司. All rights reserved.
@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
-class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CJPagingCollectionViewDelegate {
+class TestTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CJPagingCollectionViewDelegate {
     
     
     private lazy var tableView: CJBaseTableView = {
-        let tableView = CJBaseTableView.init(frame: CGRect.init(x: 0,
-                                                                y: 0,
+        
+        let tableView = CJBaseTableView.init(frame: CGRect.init(x: 0.0,
+                                                                y: 0.0,
                                                                 width: self.view.width,
                                                                 height: UISCREEN_HEIGHT - HEIGHT_STATUSBAR - HEIGHT_NAVBAR - HEIGHT_TABBAR),
                                              tableViewStyle: .plain,
@@ -55,10 +56,10 @@ class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         array.add(CJPagingCollectionModel.init(name: "EService",    icon: "EService_Zhenhai"))
         pagingCollectionView.pagingModels = array
         
-//        print(pagingCollectionView.pagingModels as Any)
-//        for model in array as! [Any] {
-//            print((model as! CJPagingCollectionModel).name as Any)
-//        }
+        //        print(pagingCollectionView.pagingModels as Any)
+        //        for model in array as! [Any] {
+        //            print((model as! CJPagingCollectionModel).name as Any)
+        //        }
         
         pagingCollectionView.reloadData()
         pagingCollectionView.backgroundColor = UIColor.white
@@ -98,7 +99,7 @@ class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.tableView.contentInset = UIEdgeInsetsMake(ignoreHeight, 0, 0, 0);
         self.tableView.mj_header.ignoredScrollViewContentInsetTop = ignoreHeight;
         
-
+        
         
         
     }
@@ -121,9 +122,9 @@ class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             self.tableView.endRefresh()
             
-//            self.present(UIViewController(), animated: true, completion: {
-//                
-//            })
+            //            self.present(UIViewController(), animated: true, completion: {
+            //
+            //            })
             
         }
         

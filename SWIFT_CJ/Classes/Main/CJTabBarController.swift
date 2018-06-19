@@ -1,6 +1,6 @@
 //
 //  CJTabBarController.swift
-//  TestTabBarController
+//  SWIFT_CJ
 //
 //  Created by CoderChenJun on 2018/3/29.
 //  Copyright © 2018年 奥奈斯特（宁波）软件技术有限公司. All rights reserved.
@@ -95,18 +95,18 @@ class CJTabBarController: UITabBarController, CJTabBarDelegate {
      */
     func setupAllChildViewControllers() {
         // 1.预订
-        let new1 = TestCollectionViewVC()
+        let new1 = TestCollectionViewController()
         setupChildViewController(new1, tabTitle: "预订", navTitle: "预订", imageName: "tabbar_icon_home_normal_30x30_", selectedImageName: "tabbar_icon_home_selected_30x30_")
         
         
         // 2.发现
-        let new2 = TestTableViewVC()
+        let new2 = TestTableViewController()
         setupChildViewController(new2, tabTitle: "发现", navTitle: "发现", imageName: "tabbar_icon_faxian_normal_30x30_", selectedImageName: "tabbar_icon_faxian_selected_30x30_")
         
         
         
         // 2.发现
-        let new3 = TestSettingVC()
+        let new3 = TestSettingViewController()
         setupChildViewController(new3, tabTitle: "设置", navTitle: "设置", imageName: "tabbar_icon_faxian_normal_30x30_", selectedImageName: "tabbar_icon_faxian_selected_30x30_")
         
     }

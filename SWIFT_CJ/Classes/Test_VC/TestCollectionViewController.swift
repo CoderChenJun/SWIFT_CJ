@@ -1,6 +1,6 @@
 //
-//  TestCollectionViewVC.swift
-//  TestTabBarController
+//  TestCollectionViewController.swift
+//  SWIFT_CJ
 //
 //  Created by CoderChenJun on 2018/4/25.
 //  Copyright © 2018年 奥奈斯特（宁波）软件技术有限公司. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TestCollectionViewVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TestCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     
@@ -59,8 +59,6 @@ class TestCollectionViewVC: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ThemeBackgroundColor
-        
-        
         
         
         self.view.addSubview(self.collectionView)
