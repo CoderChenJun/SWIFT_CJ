@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CBA79BFBDD55D45F9CE333E /* Pods_SWIFT_CJ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7782E244F3A827D394EC0BE4 /* Pods_SWIFT_CJ.framework */; };
+		3FCB967320D3EE7B004B551E /* CJBaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB967220D3EE7B004B551E /* CJBaseCollectionView.swift */; };
 		8F106953207F58AC000E0BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F106941207F58AB000E0BDF /* Assets.xcassets */; };
 		8F106954207F58AC000E0BDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F106942207F58AB000E0BDF /* LaunchScreen.storyboard */; };
 		8F106955207F58AC000E0BDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F106944207F58AB000E0BDF /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		249A77CF472B872D8DFAF19A /* Pods-SWIFT_CJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWIFT_CJ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SWIFT_CJ/Pods-SWIFT_CJ.debug.xcconfig"; sourceTree = "<group>"; };
+		3FCB967220D3EE7B004B551E /* CJBaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJBaseCollectionView.swift; sourceTree = "<group>"; };
 		4C97B2D044FD5421B5B63D05 /* Pods-SWIFT_CJ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWIFT_CJ.release.xcconfig"; path = "Pods/Target Support Files/Pods-SWIFT_CJ/Pods-SWIFT_CJ.release.xcconfig"; sourceTree = "<group>"; };
 		7782E244F3A827D394EC0BE4 /* Pods_SWIFT_CJ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SWIFT_CJ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F106941207F58AB000E0BDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				8F9EEB1E209BE8A700843461 /* CJBaseViewModel.swift */,
+				3FCB967220D3EE7B004B551E /* CJBaseCollectionView.swift */,
 				8F9B04D420919FFA00A48721 /* CJBaseTableView.swift */,
 				8F9B04D520919FFA00A48721 /* CJBaseTableView */,
 				8F7D0006209AD95200DE4112 /* CJBaseViewController.swift */,
@@ -562,6 +565,7 @@
 				8F9B050220919FFA00A48721 /* TestCollectionViewVC.swift in Sources */,
 				8F9B04EC20919FFA00A48721 /* MBProgressHUD.swift in Sources */,
 				8F9B04E320919FFA00A48721 /* UIViewController+CJ.swift in Sources */,
+				3FCB967320D3EE7B004B551E /* CJBaseCollectionView.swift in Sources */,
 				8F7D0002209987B100DE4112 /* UIApplication+CJ.swift in Sources */,
 				8F9B04E720919FFA00A48721 /* EmptyDataSetSource.swift in Sources */,
 				8F9B04FA20919FFA00A48721 /* CJSettingArrowItem.swift in Sources */,
@@ -715,10 +719,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UHRKS2NEJU;
+				DEVELOPMENT_TEAM = LQB76773LR;
 				INFOPLIST_FILE = "$(SRCROOT)/SWIFT_CJ/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.honestsoft.SWIFT_CJ;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.coderdream.SWIFT-CJ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SWIFT_CJ/Supporting Files/ObjectiveCHeader.h";
 				SWIFT_VERSION = 4.0;
@@ -732,10 +736,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UHRKS2NEJU;
+				DEVELOPMENT_TEAM = LQB76773LR;
 				INFOPLIST_FILE = "$(SRCROOT)/SWIFT_CJ/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.honestsoft.SWIFT_CJ;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.coderdream.SWIFT-CJ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SWIFT_CJ/Supporting Files/ObjectiveCHeader.h";
 				SWIFT_VERSION = 4.0;

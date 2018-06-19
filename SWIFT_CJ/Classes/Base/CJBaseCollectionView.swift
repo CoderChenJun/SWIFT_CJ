@@ -1,13 +1,15 @@
 //
-//  CJBaseTableView.swift
-//  TestTabBarController
+//  CJBaseCollectionView.swift
+//  SWIFT_CJ
 //
-//  Created by CoderChenJun on 2018/4/23.
+//  Created by CoderDream on 2018/6/15.
 //  Copyright © 2018年 奥奈斯特（宁波）软件技术有限公司. All rights reserved.
 //
 
 import Foundation
 import UIKit
+
+
 
 
 
@@ -19,7 +21,7 @@ private var kTextsCellIdentifier: String = "textsCell"
 
 
 
-class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
+class CJBaseCollectionView: UICollectionView, EmptyDataSetDelegate, EmptyDataSetSource {
     public var currentPage:      Int  = 0
     public var pageCount:        Int  = 0
     public var totalPage:        Int  = 0
@@ -82,7 +84,6 @@ class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
         
         
     }
-
     
     
     
@@ -98,26 +99,22 @@ class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
     
     
     
-    
-    
-    override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: style)
+    override init(frame: CGRect,
+                  collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
     }
     
     
-//    open func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Swift.Void)? = nil)
+    
     
     public init(frame: CGRect,
-                tableViewStyle style: UITableViewStyle,
-                tableCellClass cellClass: AnyClass,
-                forCellReuseIdentifier identifier: String?,
+                collectionViewLayout layout: UICollectionViewLayout,
                 target: UIViewController,
                 refreshSelector selector: (() -> Swift.Void)? = nil) {
         
-        super.init(frame: frame, style: style)
+        super.init(frame: frame, collectionViewLayout: layout)
         
-        //let tableView = CJBaseTableView.init(frame: frame, style: style)
-        self.register(cellClass, forCellReuseIdentifier: identifier!)
+        
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator   = false
         self.backgroundColor                = UIColor.clear
@@ -127,11 +124,13 @@ class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
         
         
         
+        
         self.stringForNoData = "无数据"
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator   = false
-        self.backgroundColor = UIColor.clear
-        self.tableFooterView = UIView()
+        self.backgroundColor                = UIColor.clear
+        
+        
         
         self.currentPage = 1
         self.pageCount = kDefaultPageCount
@@ -149,18 +148,18 @@ class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
         header?.setTitle("正在加载", for: .refreshing)
         self.mj_header = header
         
-
+        
         //    MJRefreshFooter
         //    MJRefreshBackFooter
         //    MJRefreshBackNormalFooter
         //    MJRefreshAutoFooter
         //    MJRefreshAutoNormalFooter
         //    MJRefreshBackGifFooter
-
+        
         //#warning mark - 距离底部...的时候，自动加载更多
         //    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(beginLoadMore)];
         //    footer.triggerAutomaticallyRefreshPercent = -MJRefreshFooterHeight;
-
+        
         let footer = MJRefreshBackNormalFooter(refreshingTarget: self,
                                                refreshingAction: #selector(self.beginLoadMore))
         footer?.setTitle("上拉加载更多", for: .idle)
@@ -170,11 +169,24 @@ class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
         self.mj_footer = footer
         
         
-        
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -183,7 +195,7 @@ class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
         currentPage = 1
         loadTargetSelector()
     }
-
+    
     
     @objc private func beginLoadMore() {
         isLoadingMore = true
@@ -234,8 +246,9 @@ class CJBaseTableView: UITableView, EmptyDataSetDelegate, EmptyDataSetSource {
     
     
     
-
+    
 }
+
 
 
 

@@ -9,55 +9,114 @@
 import Foundation
 import UIKit
 
-class TestCollectionViewVC: UIViewController, CJPagingCollectionViewDelegate {
+class TestCollectionViewVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private lazy var collectionView: CJBaseCollectionView = {
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+        let itemW: CGFloat = self.view.width / 4
+        let itemH: CGFloat = itemW
+        layout.itemSize                = CGSize(width: itemW, height: itemH)
+        layout.minimumLineSpacing      = 0
+        layout.minimumInteritemSpacing = 0
+        
+        
+        let collectionView: CJBaseCollectionView = CJBaseCollectionView.init(frame: CGRect.init(x: 0,
+                                                                                                y: 0,
+                                                                                                width: UISCREEN_WIDTH,
+                                                                                                height: UISCREEN_HEIGHT - HEIGHT_STATUSBAR - HEIGHT_NAVBAR - HEIGHT_TABBAR),
+                                                                             collectionViewLayout: layout,
+                                                                             target: self,
+                                                                             refreshSelector: {
+                                                                                self.refresh()
+        })
+        
+        collectionView.delegate                     = self;
+        collectionView.dataSource                   = self;
+        collectionView.backgroundColor              = UIColor.clear;
+        
+        collectionView.register(CJPagingCollectionCell.self, forCellWithReuseIdentifier: "UICollectionViewCellString")
+        
+        collectionView.mj_header.beginRefreshing()
+        
+        return collectionView
+    }()
+    
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let pagingCollectionView = CJPagingCollectionView(frame: CGRect(x: 0,
-                                                                        y: HEIGHT_STATUSBAR + HEIGHT_NAVBAR,
-                                                                        width: self.view.width,
-                                                                        height: CGFloat(CJPagingCollectionViewH)))
-        pagingCollectionView.delegate = self
-        self.view.addSubview(pagingCollectionView)
+        self.view.backgroundColor = ThemeBackgroundColor
         
         
-        let array = NSMutableArray.init()
-        array.add(CJPagingCollectionModel.init(name: "ELive",       icon: "ELive"))
-        array.add(CJPagingCollectionModel.init(name: "EPsychology", icon: "EPsychology"))
-        array.add(CJPagingCollectionModel.init(name: "ESchool",     icon: "ESchool"))
-        array.add(CJPagingCollectionModel.init(name: "EStore",      icon: "EStore"))
-        array.add(CJPagingCollectionModel.init(name: "ERights",     icon: "ERights"))
-        array.add(CJPagingCollectionModel.init(name: "EJob",        icon: "EJob"))
-        array.add(CJPagingCollectionModel.init(name: "EPolicy",     icon: "EPolicy"))
-        array.add(CJPagingCollectionModel.init(name: "EJiFenRuXue", icon: "EJiFenRuXue"))
-        array.add(CJPagingCollectionModel.init(name: "EService",    icon: "EService_Zhenhai"))
-        pagingCollectionView.pagingModels = array
         
-        print(pagingCollectionView.pagingModels as Any)
         
-        for model in array as! [Any] {
-            print((model as! CJPagingCollectionModel).name as Any)
+        self.view.addSubview(self.collectionView)
+        
+    }
+    
+    
+    
+    @objc func refresh() {
+        
+        let time: TimeInterval = 1.0
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+            //code
+            print("1 秒后输出")
+            
+            self.collectionView.endRefresh()
+            
         }
         
-        pagingCollectionView.reloadData()
-        pagingCollectionView.backgroundColor = UIColor.white
+    }
+    
+    
+    
+    
+    
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCellString", for: indexPath as IndexPath) as? CJPagingCollectionCell
+        cell?.title     = "model.name"
+        cell?.imageName = "ELive"
+        // 4.超出部分裁剪(下面横线)
+        cell?.clipsToBounds = true
+        
+        return cell!
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         
     }
     
     
     
     
-    func pagingCollectionView(_ pagingCollectionView: CJPagingCollectionView?, pages: Int, nums: Int, name: String?) {
-        print("IndexViewController --- CJpagingCollectionView分页 --- 第\(Int(pages))页 第\(Int(nums))个 \(String(describing: name))")
-        
-        
-        
-        CJLog("IndexViewController --- CJpagingCollectionView分页 --- 第\(Int(pages))页 第\(Int(nums))个 \(String(describing: name))")
-        print("items: Any...")
-    }
+    
+    
+    
     
     
     
@@ -72,6 +131,10 @@ class TestCollectionViewVC: UIViewController, CJPagingCollectionViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    
+    
     
     
     

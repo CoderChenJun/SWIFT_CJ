@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ViewController: CJBaseViewController, CJPagingCollectionViewDelegate {
+class ViewController: CJBaseViewController {
 
     func HUDButton(title : NSString?, center : CGPoint?) -> UIButton {
-        
+
         let button : UIButton = UIButton.init()
         button.setImage(UIImage.init(named: "CJ_HUD"), for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
@@ -22,17 +22,17 @@ class ViewController: CJBaseViewController, CJPagingCollectionViewDelegate {
         button.layer.borderColor  = UIColor.black.cgColor
         button.layer.borderWidth  = 2
         button.layer.cornerRadius = 5
-        
+
         return button;
     }
-    
-    
-    
-    
+
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
-        
+
         let smileButton = self.HUDButton(title: "-笑脸", center: CGPoint.init(x: UISCREEN_WIDTH * 0.5, y: 100))
         self.view.addSubview(smileButton)
         smileButton.addTarget(self, action: #selector(smileAction(_:)), for: .touchUpInside)
@@ -66,49 +66,49 @@ class ViewController: CJBaseViewController, CJPagingCollectionViewDelegate {
         let ingButton = self.HUDButton(title: "-菊花（转圈）", center: CGPoint.init(x: UISCREEN_WIDTH * 0.5, y: 475))
         self.view.addSubview(ingButton)
         ingButton.addTarget(self, action: #selector(ingAction(_:)), for: .touchUpInside)
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     @objc private func smileAction(_ button: UIButton?) {
         MBProgressHUD.showHUDText("就算回家种田，依然保持微笑", for: .smile)
-        
+
         CJAuthorityToolkit.album(useController: self, useBlock: {
             CJLog("相册权限")
         })
-        
+
     }
     @objc private func cryAction(_ button: UIButton?) {
         MBProgressHUD.showHUDText("就算回家种田，依然保持微笑", for: .cry)
-        
+
         CJAuthorityToolkit.camera(useController: self, useBlock: {
             CJLog("相机权限")
         })
-        
+
     }
     @objc private func errorAction(_ button: UIButton?) {
         MBProgressHUD.showHUDText("就算回家种田，依然保持微笑", for: .error)
-        
+
         CJAuthorityToolkit.microphone(useController: self, useBlock: {
             CJLog("麦克风权限")
         })
-        
+
     }
     @objc private func successAction(_ button: UIButton?) {
 //        MBProgressHUD.showHUDText("就算回家种田，依然保持微笑", for: .success)
-        
+
         CJAuthorityToolkit.location(useController: self, useBlock: {
             CJLog("定位权限")
         })
-        
+
     }
     @objc private func nullAction(_ button: UIButton?) {
         MBProgressHUD.showHUDText("就算回家种田，依然保持微笑", for: .null)
@@ -118,12 +118,10 @@ class ViewController: CJBaseViewController, CJPagingCollectionViewDelegate {
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.0) {
 //            MBProgressHUD.hideHUD()
 //        }
-        
-        
-        
+
+
+
     }
-    
-    
     
     
     

@@ -11,7 +11,7 @@ import Foundation
 class CJBaseViewController: UIViewController {
     
     override func viewDidLoad() {
-        
+        self.view.backgroundColor = UIColor.white
         //#warning - MARK 界面Y值,从navigationBar高度,64开始
         self.navigationController?.navigationBar.isTranslucent = false
     

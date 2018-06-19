@@ -13,8 +13,8 @@ class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     private lazy var tableView: CJBaseTableView = {
-        let tableView = CJBaseTableView.init(frame: CGRect.init(x: 0.0,
-                                                                y: HEIGHT_STATUSBAR + HEIGHT_NAVBAR,
+        let tableView = CJBaseTableView.init(frame: CGRect.init(x: 0,
+                                                                y: 0,
                                                                 width: self.view.width,
                                                                 height: UISCREEN_HEIGHT - HEIGHT_STATUSBAR - HEIGHT_NAVBAR - HEIGHT_TABBAR),
                                              tableViewStyle: .plain,
@@ -78,6 +78,7 @@ class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.red
         
         self.view.addSubview(self.tableView)
         
@@ -137,15 +138,8 @@ class TestTableViewVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     
-    
-    
-    
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let temp = Int(arc4random_uniform(100))+1
+        let temp = Int(arc4random_uniform(20))+1
         return temp
     }
     

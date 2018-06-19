@@ -97,20 +97,17 @@ class CJTabBarController: UITabBarController, CJTabBarDelegate {
         // 1.预订
         let new1 = TestCollectionViewVC()
         setupChildViewController(new1, tabTitle: "预订", navTitle: "预订", imageName: "tabbar_icon_home_normal_30x30_", selectedImageName: "tabbar_icon_home_selected_30x30_")
-        new1.view.backgroundColor = UIColor.gray
         
         
         // 2.发现
         let new2 = TestTableViewVC()
         setupChildViewController(new2, tabTitle: "发现", navTitle: "发现", imageName: "tabbar_icon_faxian_normal_30x30_", selectedImageName: "tabbar_icon_faxian_selected_30x30_")
-        new2.view.backgroundColor = UIColor.purple
         
         
         
         // 2.发现
         let new3 = TestSettingVC()
         setupChildViewController(new3, tabTitle: "设置", navTitle: "设置", imageName: "tabbar_icon_faxian_normal_30x30_", selectedImageName: "tabbar_icon_faxian_selected_30x30_")
-        new2.view.backgroundColor = UIColor.purple
         
     }
     
